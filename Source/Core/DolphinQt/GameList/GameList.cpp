@@ -329,6 +329,9 @@ void GameList::ShowContextMenu(const QPoint&)
       auto* perform_disc_update = menu->addAction(tr("Perform System Update"), this,
                                                   [this, file_path = game->GetFilePath()] {
                                                     WiiUpdate::PerformDiscUpdate(file_path, this);
+                                                    // Since the update may have installed a newer
+                                                    // system menu, trigger a refresh.
+                                                    Settings::Instance().NANDRefresh();
                                                   });
       perform_disc_update->setEnabled(!Core::IsRunning() || !SConfig::GetInstance().bWii);
     }
@@ -428,6 +431,9 @@ void GameList::OpenProperties()
     return;
 
   PropertiesDialog* properties = new PropertiesDialog(this, *game);
+  // Since the properties dialog locks the game file, it's important to free it as soon as it's
+  // closed so that the file can be moved or deleted.
+  properties->setAttribute(Qt::WA_DeleteOnClose, true);
 
   connect(properties, &PropertiesDialog::OpenGeneralSettings, this, &GameList::OpenGeneralSettings);
 
