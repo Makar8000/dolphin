@@ -21,6 +21,7 @@
 #include "Core/Core.h"
 #include "Core/Host.h"
 #include "Core/HotkeyManager.h"
+#include "Core/HW/GCPad.h"
 #include "Core/IOS/IOS.h"
 #include "Core/IOS/USB/Bluetooth/BTBase.h"
 #include "Core/State.h"
@@ -266,6 +267,9 @@ void HotkeyScheduler::Run()
               !Settings::Instance().IsUSBKeyboardConnected());
         }
       }
+
+      if (IsHotkey(HK_FORCE_RELOAD_CONTROLLER_CONFIG))
+        Pad::LoadConfig();
 
       if (IsHotkey(HK_PREV_WIIMOTE_PROFILE_1))
         m_profile_cycler.PreviousWiimoteProfile(0);
