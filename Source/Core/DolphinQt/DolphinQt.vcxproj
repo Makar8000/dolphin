@@ -147,6 +147,7 @@
     <QtMoc Include="Debugger\JITWidget.h" />
     <QtMoc Include="Debugger\MemoryWidget.h" />
     <QtMoc Include="Debugger\MemoryViewWidget.h" />
+    <QtMoc Include="Debugger\NetworkWidget.h" />
     <QtMoc Include="Debugger\NewBreakpointDialog.h" />
     <QtMoc Include="Debugger\PatchInstructionDialog.h" />
     <QtMoc Include="Debugger\RegisterWidget.h" />
@@ -181,6 +182,7 @@
     <QtMoc Include="QtUtils\FileOpenEventFilter.h" />
     <QtMoc Include="QtUtils\FlowLayout.h" />
     <QtMoc Include="QtUtils\ModalMessageBox.h" />
+    <QtMoc Include="QtUtils\ParallelProgressDialog.h" />
     <QtMoc Include="QtUtils\WindowActivationEventFilter.h" />
     <QtMoc Include="QtUtils\WrapInScrollArea.h" />
     <QtMoc Include="RenderWidget.h" />
@@ -274,6 +276,7 @@
     <ClCompile Include="$(QtMocOutPrefix)MappingWindow.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)MemoryViewWidget.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)MemoryWidget.cpp" />
+    <ClCompile Include="$(QtMocOutPrefix)NetworkWidget.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)MenuBar.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)ModalMessageBox.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)NetPlayBrowser.cpp" />
@@ -282,6 +285,7 @@
     <ClCompile Include="$(QtMocOutPrefix)NewBreakpointDialog.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)NewPatchDialog.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)PadMappingDialog.cpp" />
+    <ClCompile Include="$(QtMocOutPrefix)ParallelProgressDialog.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)PatchesWidget.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)PatchInstructionDialog.cpp" />
     <ClCompile Include="$(QtMocOutPrefix)PathPane.cpp" />
@@ -375,6 +379,7 @@
     <ClCompile Include="Debugger\JITWidget.cpp" />
     <ClCompile Include="Debugger\MemoryWidget.cpp" />
     <ClCompile Include="Debugger\MemoryViewWidget.cpp" />
+    <ClCompile Include="Debugger\NetworkWidget.cpp" />
     <ClCompile Include="DiscordHandler.cpp" />
     <ClCompile Include="DiscordJoinRequestDialog.cpp" />
     <ClCompile Include="FIFO\FIFOAnalyzer.cpp" />

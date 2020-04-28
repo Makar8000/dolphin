@@ -105,7 +105,7 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingViewHolde
         return new SliderViewHolder(view, this);
 
       case SettingsItem.TYPE_SUBMENU:
-        view = inflater.inflate(R.layout.list_item_setting, parent, false);
+        view = inflater.inflate(R.layout.list_item_setting_submenu, parent, false);
         return new SubmenuViewHolder(view, this);
 
       case SettingsItem.TYPE_INPUT_BINDING:
@@ -192,7 +192,8 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingViewHolde
 
     int value = getSelectionForSingleChoiceValue(item);
 
-    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity());
+    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity(),
+            R.style.DolphinDialogBase);
 
     builder.setTitle(item.getNameId());
     builder.setSingleChoiceItems(item.getChoicesId(), value, this);
@@ -205,7 +206,8 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingViewHolde
     mClickedItem = item;
     mClickedPosition = position;
 
-    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity());
+    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity(),
+            R.style.DolphinDialogBase);
 
     builder.setTitle(item.getNameId());
     builder.setSingleChoiceItems(item.getChoicesId(), item.getSelectValueIndex(), this);
@@ -221,7 +223,8 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingViewHolde
 
     int value = getSelectionForSingleChoiceDynamicDescriptionsValue(item);
 
-    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity());
+    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity(),
+            R.style.DolphinDialogBase);
 
     builder.setTitle(item.getNameId());
     builder.setSingleChoiceItems(item.getChoicesId(), value, this);
@@ -234,7 +237,8 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingViewHolde
     mClickedItem = item;
     mClickedPosition = position;
     mSeekbarProgress = item.getSelectedValue();
-    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity());
+    AlertDialog.Builder builder = new AlertDialog.Builder(mView.getActivity(),
+            R.style.DolphinDialogBase);
 
     LayoutInflater inflater = LayoutInflater.from(mView.getActivity());
     View view = inflater.inflate(R.layout.dialog_seekbar, null);
@@ -317,6 +321,9 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingViewHolde
         break;
       case MainPresenter.REQUEST_GAME_FILE:
         extensions = FileBrowserHelper.GAME_EXTENSIONS;
+        break;
+      case MainPresenter.REQUEST_WAD_FILE:
+        extensions = FileBrowserHelper.WAD_EXTENSION;
         break;
       default:
         throw new InvalidParameterException("Unhandled request code");

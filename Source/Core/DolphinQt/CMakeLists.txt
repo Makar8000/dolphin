@@ -176,6 +176,8 @@ add_executable(dolphin-emu
   Debugger/MemoryViewWidget.h
   Debugger/MemoryWidget.cpp
   Debugger/MemoryWidget.h
+  Debugger/NetworkWidget.cpp
+  Debugger/NetworkWidget.h
   Debugger/NewBreakpointDialog.cpp
   Debugger/NewBreakpointDialog.h
   Debugger/PatchInstructionDialog.cpp
@@ -224,6 +226,7 @@ add_executable(dolphin-emu
   QtUtils/FlowLayout.h
   QtUtils/ModalMessageBox.cpp
   QtUtils/ModalMessageBox.h
+  QtUtils/ParallelProgressDialog.h
   QtUtils/ImageConverter.cpp
   QtUtils/ImageConverter.h
   QtUtils/WindowActivationEventFilter.cpp
